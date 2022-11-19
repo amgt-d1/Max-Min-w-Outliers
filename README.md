@@ -14,10 +14,11 @@
 
 ## Datasets
 * "_dataset" directory has to be located at "src/_dataset" (i.e., src/_dataset/xx.csv, where xx is a dataset name). 
+* A dataset has to be a csv file.
+   * Each line represents a data item, and, under a d-dimensional vector assumption, each dimension has to be separeted by comma.
 
 ## Parameters
 * Set some value in the corresponding txt file in `_parameter`.
-
 
 ## Citation
 If you use our implementation, please cite the following paper.
