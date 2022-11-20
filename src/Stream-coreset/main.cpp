@@ -45,7 +45,6 @@ int main() {
         if (i == run_num - 1) f = 1;
 
         // make an instance
-        //stream_coreset t(i, rad_max);
         stream_coreset t(i, rad_max, g.get_coreset(), g.get_offline_time());
         t.run();
         t.output_file(f);
