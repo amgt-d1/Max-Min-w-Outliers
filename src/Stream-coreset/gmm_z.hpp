@@ -27,8 +27,8 @@ class gmm_z {
     double running_time = 0;
   
     // distance computation
-    float compute_distance(const point *l, const point *r) {
-
+    float compute_distance(const point *l, const point *r)
+    {
         float distance = 0;
         for (unsigned int i = 0; i < dimensionality; ++i) distance += (l->pt[i] - r->pt[i]) * (l->pt[i] - r->pt[i]);
         return sqrt(distance);
@@ -84,16 +84,16 @@ public:
         /**********************/
         /*** i-th iteration ***/
         /**********************/
-        for (unsigned int i = 1; i < coreset_size; ++i) {
-
+        for (unsigned int i = 1; i < coreset_size; ++i)
+        {
             std::pair<unsigned int, float> candidate = {0,0};
 
             // get last center
             point* p = &pset[idx];
 
             // update (1) dist-min to the intermediate result & (2) candidate
-            for (unsigned int j = 0; j < size; ++j) {
-
+            for (unsigned int j = 0; j < size; ++j)
+            {
                 // (1) dist-min update
                 const float distance = compute_distance(p, &pset[j]);
                 if (dist_min_array[j] > distance) dist_min_array[j] = distance;
