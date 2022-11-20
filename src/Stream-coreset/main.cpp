@@ -2,8 +2,8 @@
 #include "stream_coreset.hpp"
 
 
-int main() {
-
+int main()
+{
     // file input
     input_parameter();
 
@@ -18,10 +18,10 @@ int main() {
     std::mt19937 mt(0);
 	std::uniform_int_distribution<> rnd(0, 1.0);
 
-    // guessing
+    // guessing (#itarations of guessing is arbitrary)
     float rad_max = 0;
-    for (unsigned int i = 0; i < 20; ++i) {
-
+    for (unsigned int i = 0; i < 20; ++i)
+    {
         // make an instance
         gmm g(i);
 
@@ -38,15 +38,19 @@ int main() {
     g.build_coreset();
 
     // iterate run_num
-    for (unsigned int i = 0; i < run_num; ++i) {
-
+    for (unsigned int i = 0; i < run_num; ++i)
+    {
         // flag for last result
         bool f = 0;
         if (i == run_num - 1) f = 1;
 
         // make an instance
         stream_coreset t(i, rad_max, g.get_coreset(), g.get_offline_time());
+	    
+		// diversification
         t.run();
+		
+		// output result
         t.output_file(f);
     }
 
