@@ -275,7 +275,6 @@ public:
     void output_file(bool flag)
     {
         std::string f_name = "result/";
-        if (dataset_id == 0) f_name += "0_syn/";
         if (dataset_id == 1) f_name += "1_household/";
         if (dataset_id == 2) f_name += "2_covertype/";
         if (dataset_id == 3) f_name += "3_kdd/";
