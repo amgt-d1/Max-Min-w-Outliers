@@ -11,6 +11,10 @@
     * xx can be arbitrary.
 * Run:
     * ./xx.out
+* Algorithms:
+   * Stream: our streaming algorithm without coreset
+   * Stream-coreset: our streaming algorithm with coreset
+      * Our greedy algorithm can be found in `gmm_z.hpp`
 
 ## Datasets
 * "_dataset" directory has to be located at "src/_dataset" (i.e., src/_dataset/xx.csv, where xx is a dataset name). 
