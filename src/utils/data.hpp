@@ -163,26 +163,3 @@ void input_dataset()
 	std::cout << " z: " << z << "\n";
 	std::cout << " ------------------\n\n";
 }
-
-// output dataset (syn with outliers)
-void output_dataset()
-{
-    std::string f_name = "syn_out.csv";
-    std::ofstream file;
-    file.open(f_name.c_str(), std::ios::out | std::ios::app);
-
-    if (file.fail())
-    {
-        std::cerr << " cannot open the output file." << std::endl;
-        file.clear();
-        return;
-    }
-
-    // get size
-    const unsigned int size = point_set.size();
-
-    for (unsigned int i = 0; i < size; ++i)
-    {
-        file << point_set[i].pt[0] << "," << point_set[i].pt[1] << "\n";
-    }
-}
