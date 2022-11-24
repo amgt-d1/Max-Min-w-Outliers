@@ -45,7 +45,6 @@ public:
     {
         // init
         seed = s;
-        //pset = inlier_set;
         pset = point_set;
         dist_min_array.resize(pset.size());
 
