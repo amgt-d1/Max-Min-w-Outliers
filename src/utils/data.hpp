@@ -32,7 +32,7 @@ public:
 };
 
 // dataset
-std::vector<point> point_set, inlier_set;
+std::vector<point> point_set;
 
 // input dataset
 void input_dataset()
@@ -119,9 +119,6 @@ void input_dataset()
             point_set[i].pt[j] *= max_coordinate;
         }
     }
-
-    // copy
-    inlier_set = point_set;
 
     // random generator
     std::mt19937 mt(0);
