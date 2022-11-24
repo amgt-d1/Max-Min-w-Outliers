@@ -54,7 +54,6 @@ void input_dataset()
 
     // dataset input
 	std::string f_name = "../_dataset/";
-	if (dataset_id == 0) f_name += "syn.csv";
     if (dataset_id == 1) f_name += "household.csv";
     if (dataset_id == 2) f_name += "covertype.csv";
     if (dataset_id == 3) f_name += "kdd.csv";
@@ -132,90 +131,25 @@ void input_dataset()
 
     // outlier injection
     p.in = 0;
-    if (dataset_id == 0) 
+    for (unsigned i = 0; i < z; ++i)
     {
-        std::mt19937 _mt(9);
-        std::uniform_real_distribution<> rnd_syn(0, max_coordinate);
-        std::uniform_real_distribution<> rnd_add_(1.25 * max_coordinate, 1.5 * max_coordinate);
-        std::uniform_real_distribution<> rnd_add_2(max_coordinate * 0.5, max_coordinate);
-        std::uniform_real_distribution<> rnd_prob(0, 1.0);
-
-        for (unsigned i = 0; i < z; ++i)
+        while (1)
         {
-            for (unsigned int j = 0; j < dimensionality; ++j) p.pt[j] = rnd_syn(_mt);
+            for (unsigned int j = 0; j < dimensionality; ++j) p.pt[j] = rnd(mt);
 
-            double prob = rnd_prob(_mt);
             unsigned int dim = rnd_dim(mt);
-            if (prob < 0.5)
+            if (p.pt[dim] > 0)
             {
-                p.pt[dim] += rnd_add_(_mt);
-                if (dim == 0)
-                {
-                    dim = 1;
-                }
-                else
-                {
-                    dim = 0;
-                }
-
-                double prob = rnd_prob(_mt);
-                if (prob <= 0.25)
-                {
-                    p.pt[dim] += rnd_add_2(_mt);
-                }
-                else if (prob <= 0.5)
-                {
-                    p.pt[dim] -= rnd_add_2(_mt);
-                }
+                p.pt[dim] += rnd_add(mt);
             }
             else
             {
-                p.pt[dim] -= rnd_add_(_mt);
-                if (dim == 0)
-                {
-                    dim = 1;
-                }
-                else
-                {
-                    dim = 0;
-                }
-
-                double prob = rnd_prob(_mt);
-                if (prob <= 0.25)
-                {
-                    p.pt[dim] += rnd_add_2(_mt);
-                }
-                else if (prob <= 0.5)
-                {
-                    p.pt[dim] -= rnd_add_2(_mt);
-                }
+                p.pt[dim] -= rnd_add(mt);
             }
-
-            point_set.push_back(p);
+            break;
         }
-    }
-    else
-    {
-        for (unsigned i = 0; i < z; ++i)
-        {
-            while (1)
-            {
-                for (unsigned int j = 0; j < dimensionality; ++j) p.pt[j] = rnd(mt);
 
-                unsigned int dim = rnd_dim(mt);
-                if (p.pt[dim] > 0)
-                {
-                    p.pt[dim] += rnd_add(mt);
-                }
-                else
-                {
-                    p.pt[dim] -= rnd_add(mt);
-                }
-                break;
-            }
-
-            point_set.push_back(p);
-        }
+        point_set.push_back(p);
     }
 
     // get cardinality
