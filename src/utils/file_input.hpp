@@ -70,7 +70,6 @@ void input_parameter()
 	while (!ifs_z.eof()) { ifs_z >> z; }
 
 	// set dimensionality
-	if (dataset_id == 0) dimensionality = 2;
 	if (dataset_id == 1) dimensionality = 7;
 	if (dataset_id == 2) dimensionality = 10;
 	if (dataset_id == 3) dimensionality = 16;
