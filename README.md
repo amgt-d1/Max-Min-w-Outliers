@@ -20,7 +20,7 @@
 * "_dataset" directory has to be located at `src/_dataset` (i.e., src/_dataset/xx.csv, where xx is a dataset name). 
 * A dataset has to be a csv file.
    * Each line represents a data item, and, under a d-dimensional vector assumption, each dimension has to be separeted by comma.<br>
-     For example, a 3-dimensional dataset has to be:<br>
+     For example, a 3-dimensional dataset (of two vectors) has to be:<br>
      ``` 
      1,2,3
      4,5,6
