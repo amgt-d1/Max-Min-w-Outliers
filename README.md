@@ -3,7 +3,7 @@
 * As for the details about these algorithms, please read our AAAI2023 paper, [Diversity Maximization in the Presence of Outliers](https://).
 
 ## Requirement
-* We used a Ubuntu 20 LTS machine and our codes were compiled by g++ 9.4.0.
+* We used a Ubuntu 20.04 LTS machine and our codes were compiled by g++ 9.4.0.
 
 ## How to use
 * Compile:
