@@ -38,7 +38,7 @@ If you use our implementation, please cite the following paper.
     title={Diversity Maximization in the Presence of Outliersh},  
     author={Amagata, Daichi},  
     booktitle={AAAI},  
-    pages={xx--xx},  
+    pages={12338--12345},  
     year={2023}  
 }
 ```
