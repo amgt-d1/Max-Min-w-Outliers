@@ -1,6 +1,6 @@
 ## Introduction
 * This repository provides implementations of our algorithms for Max-Min Diversification with Outliers.
-* As for the details about these algorithms, please read our AAAI2023 paper, [Diversity Maximization in the Presence of Outliers](https://).
+* As for the details about these algorithms, please read our AAAI2023 paper, [Diversity Maximization in the Presence of Outliers]([https://](https://ojs.aaai.org/index.php/AAAI/article/view/26454/26226)).
 
 ## Requirement
 * We used a Ubuntu 20.04 LTS machine and our codes were compiled by g++ 9.4.0.
