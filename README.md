@@ -35,7 +35,7 @@
 If you use our implementation, please cite the following paper.
 ``` 
 @inproceedings{amagata2023diversity,  
-    title={Diversity Maximization in the Presence of Outliersh},  
+    title={Diversity Maximization in the Presence of Outliers},  
     author={Amagata, Daichi},  
     booktitle={AAAI},  
     pages={12338--12345},  
